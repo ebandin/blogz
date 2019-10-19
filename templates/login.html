@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <h1>Welcome User</h1>
+ 
+ 
+            <form method="GET" action="/newpost" style="display:inline-block;">
+            <h5> Username </h5> 
+            </br> 
+            <input type="text" value="" name = "user"/>  
+            </br> 
+            <h5> Password </h5> 
+            <input type="password" value="" name= "password"/>
+            </br> 
+            <input type="submit" value="login"/> 
+            </form> 
+            </br> 
+            <h6> Don't have an account? </h6> 
+            <form method="POST" action="/signup" style="display:inline-block;">       
+            <input type="submit" value="Create one!"> 
+            </form> 
+{{error}}
+
+{% endblock %}

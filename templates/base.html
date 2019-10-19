@@ -1,16 +1,26 @@
 <!doctype html>
 <html>
     <head>
+    <form action="/blog" method="get">
+    <input type="submit" value="Home">
+    </form> 
+    <form action="/newpost" method="get">
+    <input type="submit" value="All Posts">
+    </form> 
+    <form action="/newpost" method="get">
+    <input type="submit" value="New Post">
+    </form> 
 
+    <form action="/" method="get">
+    <input type="submit" value="Login" align="right">
+    </form> 
+    <form action="/" method="get" >
+    <input type="submit" value="Logout" align="right">
+    </form> 
 
     </head>
 <body>
-    <form action="/" method="get">
-    <input type="submit" value="Main Blog Page">
-    </form> 
-    <form action="/postblog" method="get">
-    <input type="submit" value="Add a Blog Entry ">
-    </form> 
+
     {% block content %}
     {% endblock %}
 

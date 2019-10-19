@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <h1>Welcome New User, Make an Account</h1>
+ 
+ 
+            <form method="POST" action="/" style="display:inline-block;">
+            <h5> Username </h5> 
+            </br> 
+            <input type="text" value="" name="user"/>  
+            </br> 
+            <h5> Password </h5> 
+            <input type="password" value="" name ="password"/>
+            </br> 
+            <h5> Retype Password </h5> 
+            <input type="password" value="" name="password_confirm"/>
+            </br> 
+            <input type="submit" value="Create New User"/> 
+            </form> 
+            </br> 
+{% endblock %}

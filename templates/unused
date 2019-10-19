@@ -1,0 +1,18 @@
+    if request.method == 'POST':
+        user = request.form['user']
+        password = request.form['password']
+        password_confirm = request.form['password_confirm']
+
+        userid = User.query.filter_by(username= user).first()
+        if password == password_confirm:
+            if userid.password == password: 
+                session['username'] = user
+                return redirect('/newpost')
+            else: 
+                error = "you've entered the wrong password"
+                return redirect('/', error = error)
+        else:
+            error = "You have input an incorrect username"
+            return redirect('/', error = error)
+
+        
