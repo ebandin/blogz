@@ -2,21 +2,31 @@
 
 {% block content %}
 <h1>Add a Blog Entry </h1>
-<form action="/" method="get">
+<form action="/newpost" method="POST">
     <table>
             <tr>
             <td><label for="title">Title for your new blog:</label></td>
             <td>
-                <input name="title" type="text">
+                <input type="text" name="title" id="title" value="{{blog_title}}" />
             </td>
         </tr>
+                <tr>
+            <td class="error">{{title_error}}</td>
+        </tr>
+        <br/> 
         <tr>
             <td><label for="blog">Your new blog:</label></td>
             <td>
-                <textarea rows="4" cols="50" name="blog" type="text"></textarea>
+                <td colspan="2"><textarea name="blog" id="blog" wrap="hard">{{blog_content}}</textarea></td>
             </td>
+            <tr>
+            <td class="error">{{content_error}}</td>
         </tr>
+        </tr>
+        <tr> 
+            <input type="submit" value="Add Entry">
+        </tr> 
     </table>
-    <input type="submit" value="Add Entry">
+
 </form>
 {% endblock %}

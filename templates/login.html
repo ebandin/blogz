@@ -2,23 +2,19 @@
 
 {% block content %}
  <h1>Welcome User</h1>
- 
- 
-            <form method="GET" action="/newpost" style="display:inline-block;">
+            <form method="POST" action="/login" style="display:inline-block;">
             <h5> Username </h5> 
             </br> 
-            <input type="text" value="" name = "user"/>  
+            <input type="text" placeholder="username" value="{{request.form.username}}" name = "username" />  
             </br> 
             <h5> Password </h5> 
-            <input type="password" value="" name= "password"/>
+            <input type="password" value="{{request.form.password}}" name="password"/>
             </br> 
             <input type="submit" value="login"/> 
             </form> 
             </br> 
-            <h6> Don't have an account? </h6> 
-            <form method="POST" action="/signup" style="display:inline-block;">       
-            <input type="submit" value="Create one!"> 
-            </form> 
-{{error}}
+            <h6> Don't have an account? <a href="/signup"> Create one!</a></h6> 
+<strong>{{username_error}}
+{{password_error}}</strong> 
 
 {% endblock %}
